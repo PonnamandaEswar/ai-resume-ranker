@@ -39,13 +39,21 @@ It reads multiple resumes and a job description, analyzes them using **TF-IDF + 
 
 ai_resume_ranker/
 ├── app.py
+
 ├── resume_parser.py
+
 ├── utils.py
+
 ├── ranker.py
+
 ├── report_generator.py
+
 ├── resumes/
+
 ├── job_descriptions/
+
 ├── output/
+
 └── README.md
 
 ---
