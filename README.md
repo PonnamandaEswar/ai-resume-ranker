@@ -38,6 +38,7 @@ It reads multiple resumes and a job description, analyzes them using **TF-IDF + 
 ## 📁 Folder Structure
 
 ai_resume_ranker/
+
 ├── app.py
 
 ├── resume_parser.py
