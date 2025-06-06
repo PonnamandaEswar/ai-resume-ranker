@@ -3,6 +3,8 @@ from pathlib import Path
 from resume_parser import extract_resume_text
 from utils import extract_text_from_jd
 from ranker import rank_resumes
+from report_generator import generate_pdf_report
+
 
 
 
@@ -40,6 +42,17 @@ if st.button("🔍 Rank Resumes"):
             name = resume_names[idx]
             percent = round(score * 100, 2)
             st.markdown(f"**{name}** — Match Score: 🔥 `{percent}%`")
+        # Generate downloadable PDF report
+        pdf_path = generate_pdf_report(ranking, resume_names)
+
+        with open(pdf_path, "rb") as f:
+            st.download_button(
+                label="📥 Download PDF Report",
+                data=f,
+                file_name="resume_rank_report.pdf",
+                mime="application/pdf"
+            )
+
 
     else:
         st.warning("⚠️ Please upload both resumes and a job description.")
